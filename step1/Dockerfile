@@ -10,7 +10,7 @@ RUN cd /usr/local/bin && curl -L 'https://github.com/golemfactory/golem-hyperdri
 ENV PATH="/usr/local/bin:${PATH}"
 RUN cd /work/ && git clone https://github.com/golemfactory/golem.git -b develop
 ARG GIT_BRANCH=$GIT_BRANCH
-RUN cd /work/golem && git fetch && git checkout $GIT_BRANCH 
+RUN cd /work/golem && git fetch && git checkout $GIT_BRANCH
 RUN (. /work/venv/bin/activate && pip install --upgrade pip)
 RUN (. /work/venv/bin/activate && pip install -r /work/golem/requirements.txt)
 
