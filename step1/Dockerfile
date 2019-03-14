@@ -8,8 +8,9 @@ RUN apt-get -y install openssl python3-dev libffi-dev pkg-config libjpeg-dev \
 RUN apt-get -y install docker.io curl
 RUN cd /usr/local/bin && curl -L 'https://github.com/golemfactory/golem-hyperdrive/releases/download/v0.2.10/hyperg_0.2.10_linux-x64.tar.gz' | tar xvz --strip-components=1
 ENV PATH="/usr/local/bin:${PATH}"
-ARG GIT_BRANCH=0.19.0
-RUN cd /work/ && git clone --shallow-since=2019-01-01 https://github.com/golemfactory/golem.git -b "${GIT_BRANCH}"
+RUN cd /work/ && git clone https://github.com/golemfactory/golem.git -b develop
+ARG GIT_BRANCH=$GIT_BRANCH
+RUN cd /work/golem && git fetch && git checkout $GIT_BRANCH 
 RUN (. /work/venv/bin/activate && pip install --upgrade pip)
 RUN (. /work/venv/bin/activate && pip install -r /work/golem/requirements.txt)
 
