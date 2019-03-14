@@ -1,5 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 source /work/venv/bin/activate
 exec python /work/golem/golemcli.py -d /work/config $@
-

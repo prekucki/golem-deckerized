@@ -13,4 +13,3 @@ ARG GIT_BRANCH=$GIT_BRANCH
 RUN cd /work/golem && git fetch && git checkout $GIT_BRANCH
 RUN (. /work/venv/bin/activate && pip install --upgrade pip)
 RUN (. /work/venv/bin/activate && pip install -r /work/golem/requirements.txt)
-

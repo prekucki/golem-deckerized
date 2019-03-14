@@ -1,3 +1,4 @@
+#!/bin/bash
 service docker start
 . /work/venv/bin/activate
 cd /work/golem && python setup.py develop

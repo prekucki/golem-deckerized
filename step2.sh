@@ -1,3 +1,4 @@
+#!/bin/bash
 set -x
 C=$(docker create --privileged -v $PWD/vfs2:/var/lib/docker golem-dockerized:step1 /bin/bash /work/setup-dev.sh)
 
