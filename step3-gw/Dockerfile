@@ -1,4 +1,4 @@
-FROM golem-dockerized:step2
+FROM golem-deckerized:step2
 VOLUME /var/lib/docker /work/config
 COPY run-golem.sh /work/
 COPY golemcli /usr/local/bin/
